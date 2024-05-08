@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace CarLotSimulator
 {
 	public class CarLot
@@ -6,6 +7,22 @@ namespace CarLotSimulator
 		public CarLot()
 		{
 		}
+		public List<Car> ParkingLot { get; set; } = new List<Car>();
+
+		public void InventoryList()
+		{
+			Console.WriteLine("Parking Lot One:");
+
+
+			foreach (var car in ParkingLot)
+			{
+				
+
+				Console.WriteLine($"{car.Make} {car.Model}, made in the year {car.YearMade}");
+
+			}
+		}
+
 	}
 }
 

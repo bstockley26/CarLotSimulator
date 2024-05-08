@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -6,7 +7,7 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            
+            var parkingLotOne = new CarLot();
             //TODO
 
             //Create a seperate class file called Car
@@ -20,9 +21,33 @@ namespace CarLotSimulator
             carOne.Model = "911";
             carOne.EngineNoise = "vroooom";
             carOne.HonkNoise = "beeeeeeeeeep";
+            carOne.IsDrivable = "ohh yaaa";
 
-            carOne.MakeEngineNoise();
-            carOne.MakeEngineNoise();
+            carOne.MakeEngineNoise(carOne.EngineNoise);
+            carOne.MakeHornSound(carOne.HonkNoise);
+            parkingLotOne.ParkingLot.Add(carOne);
+
+            var carTwo = new Car()
+            {
+                YearMade = 2021,
+                Make = "Toyota",
+                Model = "4runner",
+                EngineNoise = "skirt",
+                HonkNoise = "Moooveeee",
+                IsDrivable="yesss",
+
+            };
+            carTwo.MakeEngineNoise(carTwo.EngineNoise);
+            carTwo.MakeHornSound(carTwo.HonkNoise);
+            parkingLotOne.ParkingLot.Add(carTwo);
+
+
+            var carThree = new Car(2024, "Audi", "R8", "wahhh", "beep beep","yes");
+            carThree.MakeEngineNoise(carThree.EngineNoise);
+            carThree.MakeHornSound(carThree.HonkNoise);
+            parkingLotOne.ParkingLot.Add(carThree);
+
+            parkingLotOne.InventoryList();
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car

@@ -13,14 +13,23 @@ namespace CarLotSimulator
 		public string HonkNoise { get; set; }
 		public string IsDrivable { get; set; }
 
-		public void MakeEngineNoise()
+		public void MakeEngineNoise(string engineNoise)
 		{
-			Console.WriteLine(EngineNoise);
+			Console.WriteLine($"The {Make} {Model} makes a sound of {engineNoise}");
 		}
 
-		public void MakeHornSound()
+		public void MakeHornSound(string honkNoise)
 		{
-			Console.WriteLine(HonkNoise);
+			Console.WriteLine($"The {Make} {Model} makes the noise {honkNoise}when you honk");
+		}
+		public Car(int yearMade, string make, string model, string engineNoise, string honkNoise, string isDrivable)
+		{
+			YearMade = yearMade;
+			Make = make;
+			Model = model;
+			EngineNoise = engineNoise;
+			HonkNoise = honkNoise;
+			IsDrivable = isDrivable;
 		}
 	}
 }
