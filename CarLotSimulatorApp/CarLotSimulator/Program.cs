@@ -34,7 +34,7 @@ namespace CarLotSimulator
 
 
 
-            CarLot.numberOfCars++;
+            
             Console.WriteLine(CarLot.numberOfCars);
 
 
@@ -56,7 +56,7 @@ namespace CarLotSimulator
             lotOne.ParkingLot.Add(carTwo);  //change lot2 back to lot
 
 
-            CarLot.numberOfCars++;
+            
             Console.WriteLine(CarLot.numberOfCars);
 
 
@@ -67,7 +67,7 @@ namespace CarLotSimulator
             carThree.MakeEngineNoise(carThree.EngineNoise);
             carThree.MakeHornSound(carThree.HonkNoise);
             lotOne.ParkingLot.Add(carThree);
-            CarLot.numberOfCars++;
+            
             Console.WriteLine(CarLot.numberOfCars);
 
             lotOne.InventoryList();
