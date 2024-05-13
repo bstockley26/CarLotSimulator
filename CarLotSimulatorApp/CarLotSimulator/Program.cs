@@ -7,7 +7,7 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            var parkingLotOne = new CarLot();
+            var lotOne = new CarLot();
             //TODO
 
             //Create a seperate class file called Car
@@ -16,6 +16,10 @@ namespace CarLotSimulator
             //The methods should take one string parameter: the respective noise property
 
             var carOne = new Car();
+            
+
+
+
             carOne.YearMade = 2024;
             carOne.Make = "Porsche";
             carOne.Model = "911";
@@ -25,7 +29,16 @@ namespace CarLotSimulator
 
             carOne.MakeEngineNoise(carOne.EngineNoise);
             carOne.MakeHornSound(carOne.HonkNoise);
-            parkingLotOne.ParkingLot.Add(carOne);
+            lotOne.ParkingLot.Add(carOne);
+            //increment number of cars static field
+
+
+
+            CarLot.numberOfCars++;
+            Console.WriteLine(CarLot.numberOfCars);
+
+
+
 
             var carTwo = new Car()
             {
@@ -37,17 +50,28 @@ namespace CarLotSimulator
                 IsDrivable="yesss",
 
             };
+            
             carTwo.MakeEngineNoise(carTwo.EngineNoise);
             carTwo.MakeHornSound(carTwo.HonkNoise);
-            parkingLotOne.ParkingLot.Add(carTwo);
+            lotOne.ParkingLot.Add(carTwo);  //change lot2 back to lot
+
+
+            CarLot.numberOfCars++;
+            Console.WriteLine(CarLot.numberOfCars);
+
+
 
 
             var carThree = new Car(2024, "Audi", "R8", "wahhh", "beep beep","yes");
+            
             carThree.MakeEngineNoise(carThree.EngineNoise);
             carThree.MakeHornSound(carThree.HonkNoise);
-            parkingLotOne.ParkingLot.Add(carThree);
+            lotOne.ParkingLot.Add(carThree);
+            CarLot.numberOfCars++;
+            Console.WriteLine(CarLot.numberOfCars);
 
-            parkingLotOne.InventoryList();
+            lotOne.InventoryList();
+
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
